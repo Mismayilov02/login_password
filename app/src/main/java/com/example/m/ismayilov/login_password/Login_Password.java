@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RadioButton;
+import android.widget.Toast;
 
 import com.example.m.ismayilov.login_password.databinding.FragmentLoginPasswordBinding;
 
@@ -33,6 +34,7 @@ public class Login_Password extends Fragment {
         v = binding.getRoot();
 
         sharedPreferenceManager = new SharedPreferenceManager(getActivity());
+        sharedPreferenceManager.getString("password" , "de");
         radioList1.add(binding.radio1);
         radioList1.add(binding.radio2);
         radioList1.add(binding.lradio3);
@@ -99,6 +101,7 @@ public class Login_Password extends Fragment {
         if(password1.length() == 4 ){
             if (password1.equals(sharedPreferenceManager.getString("password" , "88888888888"))){
                 binding.loginText.setVisibility(View.VISIBLE);
+                Toast.makeText(getActivity() , "succes login" ,Toast.LENGTH_SHORT).show();
             }else {
                 password1 ="";
                 radio1True(password1.length());

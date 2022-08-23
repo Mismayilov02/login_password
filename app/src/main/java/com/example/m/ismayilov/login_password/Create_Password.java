@@ -117,7 +117,9 @@ public void checkPasswordEguals(){
                 sharedPreferenceManager.setValue("create_pasword" , true);
             }else {
                 password1 ="";
+                radio1True(password1.length());
                 gpassword2= "";
+                radio2True(gpassword2.length());
 
             }
         }
